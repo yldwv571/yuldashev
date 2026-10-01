@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Voice Studio Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"><span></span><span></span><span></span></div>
+<div class="card">
+  <div class="top">
+    <div class="dots" id="dots">
+      <button data-a="ocean" style="--c:#38bdf8" title="Okean"></button>
+      <button data-a="emerald" style="--c:#34d399" title="Zumrad"></button>
+      <button data-a="sun" style="--c:#fb923c" title="Quyosh"></button>
+      <button data-a="rose" style="--c:#fb7185" title="Atirgul"></button>
+    </div>
+    <button class="mini" id="mode">☀ / ☾</button>
+  </div>
+  <div class="head"><h1>Voice Studio Pro</h1><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+
+  <div class="box">
+    <textarea id="text" maxlength="20000" placeholder="Matnni kiriting..."></textarea>
+    <div class="reader" id="reader"></div>
+  </div>
+  <div class="meta"><span id="count">0 belgi</span><span>Ctrl + Enter — boshlash</span></div>
+  <div class="tools">
+    <button class="mini" id="paste">Joylashtirish</button>
+    <button class="mini" id="copy">Nusxa</button>
+    <button class="mini" id="clear">Tozalash</button>
+  </div>
+  <div class="progress"><div id="bar"></div></div>
+
+  <label for="voices">Ovozni tanlang</label>
+  <select id="voices"></select>
+
+  <label for="gender">Ovoz turi (qurilma ovozlari uchun)</label>
+  <select id="gender">
+    <option value="auto">Avtomatik (standart)</option>
+    <option value="female">Qiz bola (yengil / baland)</option>
+    <option value="male">O'g'il bola (yo'g'on / past)</option>
+  </select>
+
+  <div class="chips">
+    <button data-r="0.75">0.75x</button><button data-r="1">1x</button><button data-r="1.25">1.25x</button><button data-r="1.5">1.5x</button><button data-r="2">2x</button>
+  </div>
+  <div class="row">
+    <div class="sl"><div><span>Tezlik</span><span id="rateL">1.0x</span></div><input type="range" id="rate" min="0.5" max="2" step="0.1" value="1"></div>
+    <div class="sl"><div><span>Ton</span><span id="pitchL">1.0</span></div><input type="range" id="pitch" min="0.5" max="2" step="0.1" value="1"></div>
+  </div>
+  <div class="sl"><div><span>Balandlik</span><span id="volL">100%</span></div><input type="range" id="vol" min="0" max="1" step="0.05" value="1"></div>
+
+  <div class="btns">
+    <button class="btn speak" id="speak"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>Ovoz chiqarish</button>
+    <button class="btn ghost" id="pause" disabled><svg viewBox="0 0 24 24" id="pIcon"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg><span id="pTxt">Pauza</span></button>
+    <button class="btn ghost" id="stop"><svg viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>Stop</button>
+  </div>
+  <p class="hint" id="hint"></p>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
